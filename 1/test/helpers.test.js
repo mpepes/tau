@@ -16,6 +16,16 @@ describe('factorial', () => {
         const result = factorial(0)
         expect(result).toEqual(1)
     })
+
+    it('counts factorial properly for negative even numbers', () => {
+        const result = factorial(-2)
+        expect(result).toEqual(2)
+    })
+
+    it('counts factorial properly for negative odd numbers', () => {
+        const result = factorial(-3)
+        expect(result).toEqual(-6)
+    })
 })
 
 describe('checkArraysEquality', () => {
@@ -27,7 +37,7 @@ describe('checkArraysEquality', () => {
         expect(result).toBeTruthy
     })
 
-    it('returns false if two arrays are equal', () => {
+    it('returns false if two arrays are not equal', () => {
         const arr = [1, 2]
         const arr2 = ['1', '2']
         const result = checkArraysEquality(arr, arr2)
@@ -46,6 +56,14 @@ describe('getValuesGreaterThan', () => {
 
     it('returns an array containing 5, 7, 9', () => {
         const arr = [1, 2, 5, 7, 9]
+        const expectedResults = [5, 7, 9]
+        const result = getValuesGreaterThan(arr, 4)
+
+        expect(result).toEqual(expect.arrayContaining(expectedResults))
+    })
+    
+    it('returns an array with values grater, but not equal than 4', () => {
+        const arr = [1, 2, 4, 5, 7, 9]
         const expectedResults = [5, 7, 9]
         const result = getValuesGreaterThan(arr, 4)
 
