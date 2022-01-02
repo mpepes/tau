@@ -1,4 +1,4 @@
-const { expect, it } = require("@jest/globals");
+﻿const { expect, it } = require("@jest/globals");
 const {
     factorial,
     checkArraysEquality,
